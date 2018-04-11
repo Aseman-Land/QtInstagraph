@@ -2,6 +2,8 @@
 It's instagram API library for Qt/C++ that forked from instagraph app. In fact We converted base classes of the instagraph app to the QtModule :)
 It's free, opensource and released under the GPL license.
 
+Forked from: [Instagraph App](https://github.com/turanmahmudov/Instagraph)
+
 # Build
 
 It's easy to build it. install Qt and dependencies:
