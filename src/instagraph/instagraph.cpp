@@ -403,6 +403,18 @@ void Instagraph::editMedia(const QString &mediaId, const QString &captionText)
     QObject::connect(editMediaRequest,SIGNAL(replySrtingReady(QVariant)),this,SIGNAL(mediaEdited(QVariant)));
 }
 
+QString Instagraph::mediaShortcodeToMediaID(const QString &shortcode)
+{
+    QChar chr;
+    qint64 id = 0;
+    QString alphabet = QStringLiteral("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_");
+    for (qint32 i = 0; i < shortcode.length(); i++) {
+        chr = shortcode[i];
+        id = (id * 64) + alphabet.indexOf(chr);
+    }
+    return QString::number(id);
+}
+
 void Instagraph::infoMedia(const QString &mediaId)
 {
     InstagraphRequest *infoMediaRequest = new InstagraphRequest();

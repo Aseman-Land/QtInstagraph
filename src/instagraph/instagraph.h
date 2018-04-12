@@ -124,6 +124,8 @@ public Q_SLOTS:
     void cropImg(const QString &filename, qreal propos);
     void scaleImg(const QString &filename);
 
+    static QString mediaShortcodeToMediaID(const QString &shortcode);
+
 private:
     QString EXPERIMENTS     = QStringLiteral(INSTAGRAPH_EXPERIMENTAL_STR);
     QString LOGIN_EXPERIMENTS   = QStringLiteral(INSTAGRAPH_LOGIN_EXPERIMENTAL_STR);
